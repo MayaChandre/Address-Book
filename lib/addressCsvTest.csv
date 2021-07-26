@@ -1,0 +1,4 @@
+address,cityName,emailId,firstName,lastName,phoneNumber,stateName,zipCode
+Address,San Francisco,jeff@gmail.com,Jeff,Bezoss,+23-1234567890,California,120012
+Address,New York City,mark@gmail.com,Mark,Zukerberg,+12-9874563210,New York,123456
+Address,Los Angeles,satya@gmail.com,Satya,Nadela,+11-5463217890,California,120546
