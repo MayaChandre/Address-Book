@@ -41,7 +41,7 @@ package com.bridgelabz;
 				String cityOrStateName = sc.nextLine(); 
 				addressBook.keySet().stream().forEach( key -> {
 					AddressBookMain mainObj = addressBook.get(key);
-					mainObj.addressFileObj.readAddressBookFromAFile().stream().filter(name ->
+					mainObj.addressJsonObj.readAddressBookFromAFile().stream().filter(name ->
 					name.getStateName().equalsIgnoreCase(cityOrStateName) || name.getCityName().equalsIgnoreCase(cityOrStateName))
 							.forEach(person -> System.out.println((person.getFirstName()+" "+person.getLastName()) 
 							+ "is present in City or State: " + cityOrStateName));
@@ -58,14 +58,14 @@ package com.bridgelabz;
 		statePersonsMap = new HashMap<>();
 		addressBook.keySet().stream().forEach( key -> {
 			AddressBookMain mainObj = addressBook.get(key);
-			List<Contacts> cityPerson =  mainObj.addressFileObj.readAddressBookFromAFile().stream()
+			List<Contacts> cityPerson =  mainObj.addressJsonObj.readAddressBookFromAFile().stream()
 					.filter(contact -> contact.getCityName().equals(cityName)).collect(Collectors.toList());
 			cityPersonsMap.put(cityName, cityPerson);
 		});
 		
 		addressBook.keySet().stream().forEach( key -> {
 			AddressBookMain mainObj = addressBook.get(key);
-			List<Contacts> statePerson = mainObj.addressFileObj.readAddressBookFromAFile().stream()
+			List<Contacts> statePerson = mainObj.addressJsonObj.readAddressBookFromAFile().stream()
 					.filter(contact -> contact.getStateName().equals(stateName)).collect(Collectors.toList());
 			statePersonsMap.put(stateName, statePerson);
 		});
